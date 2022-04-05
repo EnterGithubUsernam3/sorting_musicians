@@ -7,7 +7,7 @@ class BubbleSort {
         this.result = [...array];
         this.sort_order = sort_order;
         this.attribute = attribute;
-        this.startTime = performance.now();
+        this.startTime = performance.now(); // new Date().now()
         this.sort();
         this.endTime = performance.now();
     }
@@ -18,6 +18,10 @@ class BubbleSort {
         array[j] = temp;
     }
 
+    // O() 
+    // n = 5
+    // n - 1 = 4
+    // n - 1 = 4, n - 3, n - 2, n - 1 == (n-1)!
     sort() {
         for (let i = 0; i < this.result.length - 1; i++) {
             for (let j = 0; j < this.result.length - i - 1; j++) {
