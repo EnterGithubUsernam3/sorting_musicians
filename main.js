@@ -15,7 +15,11 @@ let { generateRandomMusicians, randomNameGenerator } = require('./services/rando
 // console.log(sortedPositions);
 
 let musicians = generateRandomMusicians(5);
-printMusicians(musicians);
+
+
+musicians.forEach(mus => {
+    console.log(mus.toString());
+})
 let sort_order = 'DESC';
 let attribute = 'years_of_experience';
 

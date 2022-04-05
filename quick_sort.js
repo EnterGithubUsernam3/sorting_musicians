@@ -23,11 +23,13 @@ class QuickSort {
     partition(array, low, high) {
         let pivot = array[high];
         let i = (low - 1);
+        console.log(this.sort_order);
 
         for (let j = low; j <= high - 1; j++) {
-            if(this.sort_order = 'ASC') {
+            if(this.sort_order == 'ASC') {
                 if (array[j][this.attribute] < pivot[this.attribute]) {
                     i++;
+                    console.log("Man mou");
                     this.swap(array, i, j);
                 }
             }
