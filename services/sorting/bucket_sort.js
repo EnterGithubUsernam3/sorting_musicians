@@ -11,6 +11,7 @@ class BucketSort {
         this.attribute = (x) => {
             switch(this.attribute_text) {
                 case 'years_of_experience':
+                    console.log(x);
                     return(Math.round(x[this.attribute_text]));
                     break;
                 case 'position':
@@ -36,24 +37,18 @@ class BucketSort {
             // console.log(this.attribute(element));
             buckets[this.attribute(element)].push(element);
         });
-
-        buckets.forEach(element => {
-            let cThis = this;
+        // console.log(buckets);
+       
             if(this.sort_order == 'ASC') {
-                element.sort(
-                    function (a, b) {
-                        return (a[cThis.attribute(a)] - b[cThis.attribute(b)]);
-                    }
-                );
-            } else {
-                element.sort(
-                    function (a, b) {
-                        return (b[cThis.attribute(a)] - a[cThis.attribute(b)]);
-                    }
-                );
+                buckets = buckets;
             }
-        });
+            else {
+                buckets = buckets.reverse();
+            }
+    
+        
         this.result = buckets;
+        console.log(this.result);
     }
 
     showElapsedTime() {
